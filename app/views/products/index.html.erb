@@ -1,0 +1,7 @@
+<h1> Product Info</h1>
+<% @products.each do |product|%>
+<p>
+	<%= product.name%> -  <%= number_to_currency(product.price)%>
+	<%= link_to "ADD TO CART", line_items_path(product_id: product.id, method: :post)%>
+</p>
+	<%end%>
